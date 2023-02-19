@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-    
+
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <!-- <div>Saludos</div>
-        <p th:text="${MensajeSaludo}"></p> -->
+
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Cliente</h2>
+        <a th:href="@{/nuevoCliente}">Nuevo Cliente</a> 
+        <!-- el "@" es para acceder a rutas y el "$" es para evaluar atributos -->
+        <br/>
+        <div th:if="${clientes != null and !clientes.empty}">
+
+            <table border="1">
+                <thead>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th colspan="2">Acciones</th>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.nombre}"></td>
+                        <td th:text="${cliente.apellidos}"></td>
+                        <td th:text="${cliente.correo}"></td>
+                        <td th:text="${cliente.telefono}"></td>
+                        <td><a th:href="@{/modificarCliente/} + ${cliente.idCliente}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarCliente/} + ${cliente.idCliente}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
         
-        <!-- <h1>Un cliente</h1>
-        <p>Nombre: <span th:text="${cliente.nombre}"></span></p>
-        <p>Apellidos: <span th:text="${cliente.apellidos}"></span></p>
-        <p>Correo: <span th:text="${cliente.correo}"></span></p>
-        <p>Telefono: <span th:text="${cliente.telefono}"></span></p> -->
+        <div th:if="${clientes ==null or clientes.empty}">
+            la lista de clientes esta vacia 
+        </div>
         
-        <h1>Cliente</h1>
-        <table border="1">
-            <thead>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Telefono</th>
+        <footer th:replace="layout/plantilla :: footer"/>
 
-        </thead>
-        <tbody>
-            <tr th:each="cliente : ${clientes}">
-                <td th:text="${cliente.nombre}"></td>
-                <td th:text="${cliente.apellidos}"></td>
-                <td th:text="${cliente.correo}"></td>
-                <td th:text="${cliente.telefono}"></td>
-
-            </tr>
-
-        </tbody>
-
-    </table>
+        
 
 
 
