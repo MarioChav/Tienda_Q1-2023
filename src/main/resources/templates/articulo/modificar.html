@@ -3,7 +3,7 @@
     <head>
         <title>Techshop</title>
         <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+            <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
@@ -17,8 +17,8 @@
                 <br/>
                 <label for="categoria">Categoria: </label>
                 <select th:field="*{idCategoria}">
-                    <option th:each="categoria: $(categorias}"
-                            th:value="${categoria.idcategoria}"
+                    <option th:each="categoria: ${categorias}"
+                            th:value="${categoria.idCategoria}"
                             th:text="${categoria.descripcion}"/>
                 </select><br/>    
                 <label for="descripcion">Descripcion: </label>    

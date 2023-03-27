@@ -5,7 +5,7 @@
 
 .body{
     font-family: sans-serif;
-    padding: 90px 20px 0;
+    padding: 45px 20px 0;
 }
 
 .header{
@@ -48,7 +48,7 @@
 
 .nav-menu-item{
     font-size: 18px;
-    margin: 0 16px;
+    margin: 0 18px;
     line-height: 80px;
     width: max-content;    
 }
@@ -59,10 +59,10 @@
     
 }
 
-.nav-menu-link:hover{
+.nav-menu-link:hover {
     font-size: 22px;
     background-color: lightskyblue;
-    transition: 0.7s;
+    transition: 1s;
     
 }
 

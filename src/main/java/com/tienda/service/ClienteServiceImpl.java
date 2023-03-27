@@ -37,8 +37,8 @@ public class ClienteServiceImpl implements ClienteService {
     public void save(Cliente cliente) {
         Credito credito = cliente.getCredito();
         credito = creditoDao.save(credito);
-        cliente.setCredito(credito);
         
+        cliente.setCredito(credito);
         clienteDao.save(cliente);
     }
 
@@ -47,4 +47,21 @@ public class ClienteServiceImpl implements ClienteService {
     public void delete(Cliente cliente) {
         clienteDao.deleteById(cliente.getIdCliente());
     }
+
+    @Override
+    public List<Cliente> getClienteCorreo(String correo) {
+        return (List<Cliente>)clienteDao.findByCorreo(correo);
+    }
+    
+    @Override
+    public List<Cliente> getClienteNombreApellidos(String nombre, String apellidos) {
+        return (List<Cliente>)clienteDao.findByNombreAndApellidos(nombre, apellidos);
+    }
+
+    @Override
+    public List<Cliente> getClienteApellidos(String apellidos) {
+        return (List<Cliente>)clienteDao.findByApellidos(apellidos);
+    }
+
+    
 }

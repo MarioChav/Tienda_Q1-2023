@@ -20,6 +20,9 @@ public class ClienteController {
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
         var clientes = clienteService.getClientes();
+        //var clientes = clienteService.getClienteCorreo("jcastro@gmail.com");
+        //var clientes = clienteService.getClienteApellidos("Contreras Mora");
+        //var clientes = clienteService.getClienteNombreApellidos("Luis", "Mena Loria");
         model.addAttribute("clientes", clientes);
         
         return "/cliente/listado";
@@ -48,5 +51,8 @@ public class ClienteController {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
     }
+    
+    
+    
     
 }
