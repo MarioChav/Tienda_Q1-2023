@@ -2,7 +2,7 @@
 package com.tienda;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
 
@@ -20,7 +20,8 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;            
     }
-    @Bean    public SpringResourceTemplateResolver TemplateResolver_1() {
+    @Bean    
+    public SpringResourceTemplateResolver TemplateResolver_1() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setPrefix("templates/categoria/");
         templateResolver.setSuffix(".html");
