@@ -11,7 +11,7 @@ import lombok.Data;
 @Table(name="cliente")
 public class Cliente implements Serializable {
     
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
-        this.telefono = telefono;
+        this.telefono = telefono; 
     }
     
     

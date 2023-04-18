@@ -31,7 +31,8 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;            
     }
-    @Bean    public SpringResourceTemplateResolver TemplateResolver_2() {
+    @Bean    
+    public SpringResourceTemplateResolver TemplateResolver_2() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setPrefix("templates/articulo/");
         templateResolver.setSuffix(".html");
@@ -41,13 +42,25 @@ public class TemplateResolverConfiguration {
         templateResolver.setCheckExistence(true);
         return templateResolver;            
     }
-    @Bean    public SpringResourceTemplateResolver TemplateResolver_3() {
+    @Bean    
+    public SpringResourceTemplateResolver TemplateResolver_3() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setPrefix("templates/cliente/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setOrder(3);
+        templateResolver.setCheckExistence(true);
+        return templateResolver;            
+    }
+    @Bean    
+    public SpringResourceTemplateResolver TemplateResolver_4() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setPrefix("templates/carrito/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setOrder(4);
         templateResolver.setCheckExistence(true);
         return templateResolver;            
     }
